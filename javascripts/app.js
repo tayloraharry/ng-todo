@@ -8,6 +8,7 @@ app.controller("NavCtrl", ($scope) => {
 
 app.controller("TodoCtrl", ($scope)=> {
   $scope.showListView = true;
+  $scope.newTask = {};
   $scope.items = [
     {
       id: 0,
@@ -26,6 +27,18 @@ app.controller("TodoCtrl", ($scope)=> {
       task:"take a nap",
       isCompleted:false,
       assignedTo:"Nate"
+    },
+    {
+      id: 2,
+      task:"take a nap",
+      isCompleted:false,
+      assignedTo:"Nate"
+    },
+    {
+      id: 2,
+      task:"take a nap",
+      isCompleted:false,
+      assignedTo:"Nate"
     }
   ];
   $scope.allItems = () => {
@@ -34,5 +47,16 @@ app.controller("TodoCtrl", ($scope)=> {
   $scope.newItem =  () => {
     $scope.showListView = false;
   }
+
+ $scope.addNewItem = function() {
+  $scope.newTask.isCompleted = false;
+  $scope.newTask.id = $scope.items.length;
+  $scope.items.push($scope.newTask);
+  $scope.newTask = {};
+  $scope.showListView = true;
+ }
+
+
+
 
 });
