@@ -5,9 +5,13 @@ app.controller("TodoCtrl", ($scope, ItemFactory)=> {
   $scope.newTask = {};
   $scope.items = [];
 
+let getItems = function() {
   ItemFactory.getItemList().then(function(items){
    $scope.items = items;
-  })
+  });
+};
+
+  getItems();
 
   $scope.allItems = () => {
     $scope.showListView = true;
@@ -18,10 +22,11 @@ app.controller("TodoCtrl", ($scope, ItemFactory)=> {
 
  $scope.addNewItem = function() {
   $scope.newTask.isCompleted = false;
-  $scope.newTask.id = $scope.items.length;
-  $scope.items.push($scope.newTask);
-  $scope.newTask = {};
-  $scope.showListView = true;
+  ItemFactory.postNewItem($scope.newTask).then(function(itemId){
+    getItems();
+    $scope.newTask = {};
+    $scope.showListView = true;
+  });
  };
 
 
