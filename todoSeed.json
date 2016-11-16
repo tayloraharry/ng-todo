@@ -1,0 +1,29 @@
+{
+  "items" :{
+   "item0":{
+      "task":"mow the lawn",
+      "isCompleted":true,
+      "assignedTo":"Zoe"
+    },
+   "item1":{
+      "task":"water the lawn",
+      "isCompleted":false,
+      "assignedTo":"Zoe"
+    },
+   "item2":{
+      "task":"walk the dog",
+      "isCompleted":true,
+      "assignedTo":"Zoe"
+    },
+   "item3":{
+      "task":"go to the store",
+      "isCompleted":false,
+      "assignedTo":"Zoe"
+    },
+   "item4":{
+      "task":"mow the lawn",
+      "isCompleted":false,
+      "assignedTo":"Zoe"
+    }
+  }
+}
