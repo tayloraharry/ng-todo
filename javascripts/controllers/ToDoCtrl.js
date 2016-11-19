@@ -29,7 +29,11 @@ let getItems = function() {
   });
  };
 
-
+ $scope.deleteItem = function(itemIdToDelete) {
+  ItemFactory.deleteItem(itemIdToDelete).then(function(){
+    getItems();
+  });
+ };
 
 
 });
