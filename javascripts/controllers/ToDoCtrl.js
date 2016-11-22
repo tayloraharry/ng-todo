@@ -13,13 +13,6 @@ let getItems = function() {
 
   getItems();
 
-  $scope.allItems = () => {
-    $scope.showListView = true;
-  };
-  $scope.newItem =  () => {
-    $scope.showListView = false;
-  };
-
  $scope.addNewItem = function() {
   $scope.newTask.isCompleted = false;
   ItemFactory.postNewItem($scope.newTask).then(function(itemId){
