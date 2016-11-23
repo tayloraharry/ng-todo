@@ -8,7 +8,7 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, $routeParams,
     AuthFactory.authenticate(loginStuff).then(function(didLogin) {
       return UserFactory.getUser(didLogin.uid);
     }).then(function(userCreds){
-      $scope.user = userCreds;
+      $rootScope.user = userCreds;
       $scope.login = {};
       $scope.register = {};
       $location.url("/items/list");
