@@ -13,6 +13,10 @@ app.controller("NavCtrl", ($scope) => {
   {
     name:"New Item",
     url: "#/items/new"
+  },
+  {
+    name:"Login",
+    url: "#/auth"
   }
   ];
 });
